@@ -1,0 +1,15 @@
+import {createContext,useState,useEffect} from 'react'
+import {getBooks} from '../../service/books-api.service'
+
+export const someContext = createContext()
+
+export default function SomeProvider({children}){
+    const [somthing,setSomthings] = useState([])
+    useEffect(()=>{getFetchFunc().then(res => setSomthings(res))},[])
+
+    return(
+        <booksContext.Provider value={{somthing,setSomthings}}>
+            {children}
+        </booksContext.Provider>
+    )
+}

@@ -1,0 +1,8 @@
+const Api = "https://"
+
+export const getSomething = async() => {
+    try{
+        return await fetch(Api)
+        .then(res => res.json())
+    }catch(error){console.log(error)}
+}
